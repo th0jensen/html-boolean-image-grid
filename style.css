@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+header {
+  height: 50px;
+  width: 100%;
+  position: fixed;
+
+  .header-wrapper {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: auto 1fr;
+    background-color: #011434;
+
+    img {
+      height: 50px;
+      max-width: 100%;
+      padding: 5px;
+    }
+  }
+}
+
+main {
+  display: grid;
+  grid-auto-flow: row;
+  justify-content: center;
+  align-items: center;
+
+  .hero-section {
+    width: 100vw;
+    height: 450px;
+    background-image: url('assets/images/hero.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 50px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      color: white;
+      font-size: 20px;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 5px;
+    }
+  }
+
+  .card-wrapper {
+    margin: 20px 7vw 30px 7vw;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 300px 300px 300px 300px;
+    column-gap: 50px;
+    row-gap: 50px;
+
+    a {
+      text-decoration: none;
+      color: black;
+
+      .card {
+        display: grid;
+        grid-template-rows: 300px auto;
+        width: 300px;
+        border: solid #303030 1px;
+        border-radius: 5px;
+        overflow: hidden;
+
+        .featured-image {
+          background-image: url('assets/images/boolean-laptop.jpg');
+          background-repeat: no-repeat;
+          background-size: contain;
+          display: grid;
+          grid-template-columns: 1fr auto;
+
+          .card-logo {
+            grid-column: 2 / -1;
+            margin: 10px;
+            height: 50px;
+            border-radius: 25px;
+          }
+        }
+
+        .card-content {
+          margin: 20px;
+          display: grid;
+          row-gap: 15px;
+
+          .social-buttons {
+            display: grid;
+            grid-template-columns: 1fr auto auto;
+            column-gap: 15px;
+
+            .github-icon {
+              grid-column: 2 / span 1;
+              height: 35px;
+            }
+
+            .twitter-icon {
+              grid-column: 3 / span 1;
+              height: 35px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #011434;
+}
+
+@media (max-width: 1400px) {
+  main {
+    .card-wrapper {
+      grid-template-columns: 300px 300px 300px;
+    }
+  }
+}
+
+@media (max-width: 1050px) {
+  main {
+    .card-wrapper {
+      grid-template-columns: 300px 300px;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  main {
+    .card-wrapper {
+      grid-template-columns: 300px;
+    }
+  }
+}
